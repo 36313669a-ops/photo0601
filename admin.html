@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>投票後台</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:#0066cc;
+    color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>攝影比賽票數統計</h1>
+</header>
+
+<div style="padding:20px">
+
+<h2>即時排行榜</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>排名</th>
+<th>作品編號</th>
+<th>票數</th>
+</tr>
+</thead>
+
+<tbody id="ranking"></tbody>
+
+</table>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

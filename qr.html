@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code 產生器</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+    .box {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📱 63張作品 QR Code</h1>
+<div class="grid" id="grid"></div>
+
+<script>
+const baseUrl = "https://你的帳號.github.io/photo-vote/";
+
+const grid = document.getElementById("grid");
+
+for (let i = 1; i <= 63; i++) {
+  const id = String(i).padStart(3, "0");
+  const link = `${baseUrl}?id=${id}`;
+
+  const div = document.createElement("div");
+  div.className = "box";
+
+  div.innerHTML = `
+    <p>${id}</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${link}">
+    <input value="${link}" readonly onclick="this.select()">
+  `;
+
+  grid.appendChild(div);
+}
+</script>
+
+</body>
+</html>
